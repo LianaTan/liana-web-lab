@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(document).ready(function() {
+				$("#btn").click(function(event) {
+					var res = $.ajax({
+						url: '/data.txt',
+						type: 'GET',
+						async:false,
+						dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+						data: {param1: 'value1'},
+					});
+					document.write(res.responseText);
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="btn">Get</button>
+</body>
+</html>
